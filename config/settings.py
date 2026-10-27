@@ -19,6 +19,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'dogs',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -99,3 +100,6 @@ MAILERS = {
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# при авторизации будет применена эта модель
+AUTH_USER_MODEL = 'users.User'
