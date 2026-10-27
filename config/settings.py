@@ -107,3 +107,14 @@ AUTH_USER_MODEL = 'users.User'
 # перенаправляем на главную страницу
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.mail.ru'
+EMAIL_PORT = 2525
+EMAIL_HOST_USER = "kostyani4@mail.ru"
+EMAIL_HOST_PASSWORD = "2vU3g700JegQ2tjE9DK4"
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+
+SERVER_EMAIL = EMAIL_HOST_USER
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
