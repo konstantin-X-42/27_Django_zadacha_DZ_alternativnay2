@@ -28,7 +28,10 @@
             <div class="navbar-nav ms-auto gap-3 align-items-center">
                 <a href="{% url 'dogs:dogs_list' %}" class="nav-link text-white-50">Главная</a>
                 {% if user.is_authenticated %}
-                    <a href="{% url 'users:logout' %}" class="nav-link btn btn-sm btn-outline-light px-3 text-white">Выход</a>
+                    <form action="{% url 'users:logout' %}" method="post" class="d-inline m-0 p-0">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-sm btn-outline-light px-3 text-white nav-link d-inline-block">Выход</button>
+                    </form>
                 {% else %}
                     <a href="{% url 'users:login' %}" class="nav-link btn btn-sm btn-light text-dark px-3">Вход</a>
                 {% endif %}
