@@ -124,4 +124,5 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 # Отключаем строгую верификацию SSL-сертификатов для отправки почты
 ssl._create_default_https_context = ssl._create_unverified_context
 
-
+# исключает ошибку при нажатии кнопки ВЫХОД пользователя
+CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000', 'http://localhost:8000']

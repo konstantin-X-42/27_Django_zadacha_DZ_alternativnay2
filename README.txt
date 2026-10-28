@@ -17,6 +17,11 @@ admin@example.com
 123qwe
 
 обычный пользователь без доступа в admin
+supertest8@mail.ru
+asRefislv89
+
+-----не получидлось авторизовать по email
+
 test@test.ru
 asdff4S36
 
@@ -41,6 +46,14 @@ asRefislv89
 
 supertest6@mail.ru
 asRefislv89
+
+supertest7@mail.ru
+asRefislv89
+
+demyni4y@yandex.ru
+asRefislv89
+
+
 -----------------------------------------------------------------------------
 
 
