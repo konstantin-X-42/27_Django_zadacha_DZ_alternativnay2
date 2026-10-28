@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.forms.models import inlineformset_factory
 from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
@@ -34,11 +35,19 @@ class DogDetailView(DetailView):
 
 
 
-class DogCreateView(CreateView):
+class DogCreateView(CreateView, LoginRequiredMixin):
+
     """-25- Контроллер автоматизирует создание новой записи в базе данных через HTML-форму."""
     model = Dog
     form_class = DogForm
     success_url = reverse_lazy('dogs:dogs_list')
+
+    def form_valid(self, form):
+        dog = form.save()
+        user = self.request.user
+        dog.owner = user
+        dog.save()
+        return super().form_valid(form)
 
 
 

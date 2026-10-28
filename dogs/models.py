@@ -1,5 +1,7 @@
 from django.db import models
 
+from users.models import User
+
 
 class Breed(models.Model):
     """-23- Модель для породы."""
@@ -99,6 +101,8 @@ class Parent(models.Model):
         blank=True,
     )
 
+    owner = models.ForeignKey(User, verbose_name="Владелец", help_text="Укажите владельца собаки", blank=True,
+                              null=True, on_delete=models.SET_NULL)
 
     class Meta:
         """-26- Настройки отображения модели Parent (внутренний класс Meta) и её строковое представление."""
